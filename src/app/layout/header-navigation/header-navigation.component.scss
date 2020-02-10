@@ -1,0 +1,49 @@
+@import 'src/styles/material/palette';
+
+:host {
+    font-family: 'futura-pt', sans-serif;
+    height: 100%;
+}
+
+nav.header-nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    ul.links-list {
+        display: flex;
+        height: 100%;
+
+        li.link-item {
+            margin: 0 22.5px;
+
+            a.link {
+                font-size: 16px;
+                font-weight: 600;
+                color: mat-contrast($reali-red, 600);
+                position: relative;
+                height: 100%;
+                line-height: 75px;
+                display: inline-block;
+
+                &.active {
+                    font-size: 16px;
+                    color: mat-color($reali-red, 700);
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        height: 4px;
+                        bottom: 0;
+                        left: 0;
+                        border-radius: 2px;
+                        width: 100%;
+                        background-color: mat-color($reali-red, 700);;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

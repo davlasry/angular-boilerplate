@@ -1,0 +1,28 @@
+@import 'src/styles/abstracts/variables/typography';
+
+:host {
+    margin-left: 45px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .carret-down {
+        margin-left: 10px;
+    }
+}
+
+button.menu-item {
+    font-family: $primary-font;
+    height: 68px;
+    width: 250px;
+    padding: 0 25px;
+    font-size: 18px;
+}
+
+::ng-deep .mat-menu-panel {
+    position: relative;
+    top: 24px;
+}

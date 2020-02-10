@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/material/palette';
+@import 'styles/material/menu';
+@import 'styles/material/material.scss';
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+    background-color: mat-contrast($reali-red, 50);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
