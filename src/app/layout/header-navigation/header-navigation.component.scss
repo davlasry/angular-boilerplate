@@ -15,19 +15,18 @@ nav.header-nav {
         height: 100%;
 
         li.link-item {
-            margin: 0 22.5px;
+            margin-right: 45px;
 
             a.link {
                 font-size: 16px;
                 font-weight: 600;
+                text-transform: uppercase;
                 color: mat-contrast($reali-red, 600);
                 position: relative;
-                height: 100%;
-                line-height: 75px;
+                line-height: 76px;
                 display: inline-block;
 
                 &.active {
-                    font-size: 16px;
                     color: mat-color($reali-red, 700);
 
                     &:after {
@@ -43,6 +42,21 @@ nav.header-nav {
                 }
             }
         }
+    }
+
+    .sign-in-btn {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: mat-color($reali-red, 700);
+        margin-left: 39px;
+        cursor: pointer;
+    }
+
+    .separator {
+        width: 1px;
+        height: 45px;
+        background-color: mat-contrast($reali-red, 300);
     }
 }
 

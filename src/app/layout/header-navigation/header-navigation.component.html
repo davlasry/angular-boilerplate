@@ -2,14 +2,22 @@
     <ul class="links-list">
         <li class="link-item active">
             <a routerLink="/"
-               class="link active">BUY</a>
+               class="link active">Buy</a>
         </li>
 
         <li class="link-item">
             <a routerLink="/"
-               class="link">SELL</a>
+               class="link">Sell</a>
         </li>
     </ul>
 
-    <reali-profile-nav-item></reali-profile-nav-item>
+    <div class="separator"></div>
+
+    <button class="sign-in-btn"
+         *ngIf="!isSignedIn; else profileNavItem"
+         (click)="onSignIn()">Sign In</button>
+
+    <ng-template #profileNavItem>
+        <reali-profile-nav-item></reali-profile-nav-item>
+    </ng-template>
 </nav>
