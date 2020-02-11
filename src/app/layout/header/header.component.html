@@ -1,7 +1,23 @@
 <header>
-    <a class="brand" routerLink="/">
-        <img class="logo" src="assets/logos/new-logo.svg" alt="Reali, Inc." />
-    </a>
+    <div class="logo-container">
+        <a class="brand" routerLink="/">
+            <img class="logo" src="assets/logos/new-logo.svg" alt="Reali, Inc."/>
+        </a>
 
-    <reali-header-navigation></reali-header-navigation>
+        <div *ngIf="isMobile">
+            <img class="carret-down"
+                 (click)="onClickToggleMobileNav()"
+                 *ngIf="!isMobileNav"
+                 src="assets/icons/carret-down.svg"
+                 alt=""/>
+
+            <img class="carret-down"
+                 (click)="onClickToggleMobileNav()"
+                 *ngIf="isMobileNav"
+                 src="assets/icons/carret-up.svg"
+                 alt=""/>
+        </div>
+    </div>
+
+    <reali-header-nav *ngIf="!isMobile"></reali-header-nav>
 </header>

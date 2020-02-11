@@ -1,0 +1,21 @@
+@import 'src/styles/material/palette';
+
+:host {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background-color: mat-color($reali-red, 50);
+    top: calc(-100vh + 75px);
+    left: 0;
+    transition: 0.3s top linear;
+
+    &.opened {
+        top: 75px;
+    }
+}
+
+nav {
+    padding: 20px;
+}

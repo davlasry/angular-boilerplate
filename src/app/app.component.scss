@@ -1,10 +1,24 @@
+@import 'src/styles/material/palette';
+
 :host {
+    ::ng-deep {
+        .mat-drawer-side {
+            border: none;
+        }
+
+        .mat-drawer-container {
+            background-color: mat-contrast($reali-red, 50);
+        }
+    }
+}
+
+.main-container {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.wrapper {
+.container {
     display: flex;
     flex: 1;
 }

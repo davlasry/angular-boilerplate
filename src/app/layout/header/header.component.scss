@@ -10,9 +10,23 @@ header {
     justify-content: space-between;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
     padding: 0 48px 0 45px;
-}
 
-.logo {
-    height: 27px;
-    width: 76px;
+    .logo-container {
+        display: flex;
+        align-items: center;
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                height: 27px;
+                width: 76px;
+            }
+        }
+
+        .carret-down {
+            margin-left: 10px;
+        }
+    }
 }

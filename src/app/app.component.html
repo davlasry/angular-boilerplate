@@ -1,9 +1,29 @@
-<reali-header></reali-header>
+<div class="main-container">
+    <reali-header (toggleMobileNav)="onToggleMobileNav()"
+                  [isMobile]="isMobile$ | async"
+                  [isMobileNav]="isMobileNav"></reali-header>
 
-<div class="wrapper">
-    <reali-sidenav></reali-sidenav>
-<!--    <router-outlet></router-outlet>-->
-    <main>FUTURE ROUTER_OUTLET</main>
+    <mat-sidenav-container class="container">
+        <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+            <reali-sidenav *ngIf="!(isMobile$ | async)"></reali-sidenav>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <main>
+                <!--    <router-outlet></router-outlet>-->
+                <div>
+                    FUTURE ROUTER_OUTLET
+                </div>
+                <div>isMobileNav: {{ isMobileNav }}</div>
+                <button mat-raised-button (click)="sidenav.toggle()">Toggle sidenav</button>
+            </main>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <reali-footer></reali-footer>
 </div>
 
-<reali-footer></reali-footer>
+<reali-mobile-nav class="mobile-nav"
+                  *ngIf="isMobile$ | async"
+                  [class.opened]="isMobileNav"></reali-mobile-nav>

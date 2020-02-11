@@ -7,9 +7,11 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderNavigationComponent } from './layout/header-navigation/header-navigation.component';
+import { HeaderNavComponent } from './layout/header-nav/header-nav.component';
 import { ProfileNavItemComponent } from './layout/profile-nav-item/profile-nav-item.component';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { MobileNavComponent } from './layout/mobile-nav/mobile-nav.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { SharedModule } from './shared/shared.module';
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
-    HeaderNavigationComponent,
-    ProfileNavItemComponent
+    HeaderNavComponent,
+    ProfileNavItemComponent,
+    MobileNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
