@@ -1,29 +1,41 @@
-<div class="main-container">
-    <reali-header (toggleMobileNav)="onToggleMobileNav()"
-                  [isMobile]="isMobile"
-                  [isMobileNav]="isMobileNav"></reali-header>
+<!--Header-->
+<reali-header (toggleMobileNav)="onToggleMobileNav()"
+              [isMobile]="isMobile"
+              [isMobileNav]="isMobileNav"></reali-header>
 
-    <mat-sidenav-container class="container">
-        <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
-            <reali-sidenav *ngIf="!isMobile"></reali-sidenav>
-        </mat-sidenav>
+<!--Desktop layout-->
+<mat-sidenav-container class="desktop-container"
+                       *ngIf="!isMobile">
+    <mat-sidenav #sidenav mode="side"
+                 opened
+                 class="example-sidenav">
+        <!--Desktop sidenav-->
+        <reali-sidenav></reali-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <main>
+            <h3>ROUTER_OUTLET DESKTOP</h3>
+            <!--<router-outlet></router-outlet>-->
+            <button mat-raised-button
+                    (click)="sidenav.toggle()">Toggle sidenav
+            </button>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
-        <mat-sidenav-content>
-            <main>
-                <!--    <router-outlet></router-outlet>-->
-                <div>
-                    FUTURE ROUTER_OUTLET
-                </div>
-                <div>isMobileNav: {{ isMobileNav }}</div>
-                <button mat-raised-button (click)="sidenav.toggle()">Toggle sidenav</button>
-            </main>
+<!--Mobile layout-->
+<div *ngIf="isMobile">
+    <main>
+        <h3>ROUTER_OUTLET MOBILE</h3>
+        <!--<router-outlet></router-outlet>-->
+    </main>
 
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-
-    <reali-footer></reali-footer>
+    <!--Mobile sidenav overlay-->
+    <reali-mobile-nav class="mobile-nav"
+                      [class.opened]="isMobileNav"></reali-mobile-nav>
 </div>
 
-<reali-mobile-nav class="mobile-nav"
-                  *ngIf="isMobile"
-                  [class.opened]="isMobileNav"></reali-mobile-nav>
+<!--Footer-->
+<reali-footer></reali-footer>
+
+

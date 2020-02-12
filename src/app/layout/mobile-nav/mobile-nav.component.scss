@@ -17,5 +17,46 @@
 }
 
 nav {
-    padding: 20px;
+    padding-left: 20px;
+
+    ul.links-list {
+        padding-top: 25px;
+
+        li.link-item {
+            padding: 22.5px 0;
+
+            a.link {
+                font-size: 18px;
+                font-weight: 600;
+                color: mat-contrast($reali-red, 600);
+                position: relative;
+                line-height: 1.8em;
+                display: inline-block;
+
+                &.active {
+                    color: mat-color($reali-red, 700);
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        border-radius: 2px;
+                        width: 100%;
+                        background-color: mat-color($reali-red, 700);;
+                    }
+                }
+            }
+        }
+    }
+
+    .sign-in-btn {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: mat-color($reali-red, 700);
+        cursor: pointer;
+        padding: 22.5px 0;
+    }
 }

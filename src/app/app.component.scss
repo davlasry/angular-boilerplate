@@ -1,6 +1,10 @@
 @import 'src/styles/material/palette';
 
 :host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     ::ng-deep {
         .mat-drawer-side {
             border: none;
@@ -12,13 +16,7 @@
     }
 }
 
-.main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.container {
+.desktop-container {
     display: flex;
     flex: 1;
 }

@@ -12,7 +12,7 @@ export class AppComponent {
 
     constructor(private layoutService: LayoutService) {
         this.layoutService.isMobile$.subscribe((result) => {
-            console.log(result);
+            // console.log(result);
             this.isMobile = result.matches;
         });
     }

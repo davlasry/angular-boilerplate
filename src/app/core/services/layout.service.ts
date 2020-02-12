@@ -7,6 +7,6 @@ export class LayoutService {
     isMobile$: Observable<any>;
 
     constructor(private breakpointObserver: BreakpointObserver) {
-        this.isMobile$ = breakpointObserver.observe(['(min-width: 500px)']);
+        this.isMobile$ = breakpointObserver.observe(['(max-width: 500px)']);
     }
 }
