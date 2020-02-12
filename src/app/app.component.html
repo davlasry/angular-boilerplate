@@ -1,11 +1,11 @@
 <div class="main-container">
     <reali-header (toggleMobileNav)="onToggleMobileNav()"
-                  [isMobile]="isMobile$ | async"
+                  [isMobile]="isMobile"
                   [isMobileNav]="isMobileNav"></reali-header>
 
     <mat-sidenav-container class="container">
         <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
-            <reali-sidenav *ngIf="!(isMobile$ | async)"></reali-sidenav>
+            <reali-sidenav *ngIf="!isMobile"></reali-sidenav>
         </mat-sidenav>
 
         <mat-sidenav-content>
@@ -25,5 +25,5 @@
 </div>
 
 <reali-mobile-nav class="mobile-nav"
-                  *ngIf="isMobile$ | async"
+                  *ngIf="isMobile"
                   [class.opened]="isMobileNav"></reali-mobile-nav>

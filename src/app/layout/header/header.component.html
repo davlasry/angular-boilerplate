@@ -7,14 +7,7 @@
         <div *ngIf="isMobile">
             <img class="carret-down"
                  (click)="onClickToggleMobileNav()"
-                 *ngIf="!isMobileNav"
-                 src="assets/icons/carret-down.svg"
-                 alt=""/>
-
-            <img class="carret-down"
-                 (click)="onClickToggleMobileNav()"
-                 *ngIf="isMobileNav"
-                 src="assets/icons/carret-up.svg"
+                 [src]="isMobileNav ? 'assets/icons/carret-up.svg' : 'assets/icons/carret-down.svg'"
                  alt=""/>
         </div>
     </div>

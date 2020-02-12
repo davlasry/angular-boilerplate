@@ -1,26 +1,12 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { MediaMatcher } from '@angular/cdk/layout';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
 
 @Injectable()
-export class LayoutService implements OnDestroy {
-    private isMobile = new BehaviorSubject(false);
-    isMobile$ = this.isMobile.asObservable();
-    mobileQuery: MediaQueryList;
+export class LayoutService {
+    isMobile$: Observable<any>;
 
-    constructor(private mediaMatcher: MediaMatcher) {
-        this.mobileQuery = mediaMatcher.matchMedia('(max-width: 500px)');
-        this.onMobileChange();
-
-        this.mobileQuery.addEventListener('change', this.onMobileChange.bind(this));
+    constructor(private breakpointObserver: BreakpointObserver) {
+        this.isMobile$ = breakpointObserver.observe(['(min-width: 500px)']);
     }
-
-    onMobileChange() {
-        this.isMobile.next(this.mobileQuery.matches);
-    }
-
-    ngOnDestroy() {
-        this.mobileQuery.removeEventListener('change', this.onMobileChange);
-    }
-
 }
